@@ -13,7 +13,7 @@ export async function updatableWorkflow(method: UpdateMethod) {
       ? updateWithActivity.setUpdateHandler<string, string>()
       : updateWithProxyWorkflow.setUpdateHandler<string, string>();
 
-  while (wf.taskInfo().historyLength < 2000) {
+  while (wf.workflowInfo().historyLength < 2000) {
     await wf.condition(() => tasks.length > 0);
     for (;;) {
       const task = tasks.shift();

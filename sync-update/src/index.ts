@@ -29,10 +29,14 @@ async function main() {
       taskQueue,
     });
     if (updateMethod === 'activityResponse') {
-      const response = await updateWithActivityResponse.updateWorkflow(handle, 'Temporal');
+      const response = await updateWithActivityResponse.updateWorkflow(handle, 'Input to updateWithActivityResponse');
       console.log({ response });
     } else if (updateMethod === 'proxyWorkflow') {
-      const response = await updateWithProxyWorkflow.updateWorkflow(handle, 'Temporal', taskQueue);
+      const response = await updateWithProxyWorkflow.updateWorkflow(
+        handle,
+        'Input to updateWithProxyWorkflow',
+        taskQueue
+      );
       console.log({ response });
     }
     await handle.terminate(); // Avoid keeping around sample workflows

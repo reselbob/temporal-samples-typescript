@@ -15,7 +15,7 @@ export interface ResponseOptions {
 }
 
 export function createUpdateAndRespondWithActivitySignal<Input>(): wf.SignalDefinition<[Input, ResponseOptions]> {
-  return wf.defineSignal<[Input, ResponseOptions]>('updateAndResponsdWithActivity');
+  return wf.defineSignal<[Input, ResponseOptions]>('updateAndResponseWithActivity');
 }
 
 export interface Task<Input, Output> {
